@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Full Screen Launcher</title>
+</head>
+<body>
+<script>
+    // Open blank window
+    const win = window.open("about:blank", "_blank");
+
+    // Write content into blank page
+    win.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Game</title>
+            <style>
+                body { margin:0; overflow:hidden; background:black; }
+            </style>
+        </head>
+        <body>
+            <h1 style="color:white;text-align:center;">Loading Game...</h1>
+
+            <script>
+                // Example: load your game script
+                var script = document.createElement("script");
+                script.src = "YOUR_GAME_FILE.js"; // replace this
+                document.body.appendChild(script);
+            <\/script>
+
+        </body>
+        </html>
+    `);
+
+    win.document.close();
+
+    // Optional: close this small page
+    window.close();
+</script>
+</body>
+</html>
